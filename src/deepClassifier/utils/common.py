@@ -1,5 +1,4 @@
 import os
-from tkinter import E
 from typing import Any
 from box.exceptions import BoxValueError
 import yaml
@@ -8,12 +7,13 @@ import json
 import joblib
 from ensure import ensure_annotations
 from box import ConfigBox
-from pathlib import Path, path 
-from type import any
+from pathlib import Path 
+from typing import Any
+
 
 
 @ensure_annotations
-def read_yaml(path_to_yaml:path)->ConfigBox:
+def read_yaml(path_to_yaml:Path)->ConfigBox:
     '''reads yaml file and returns
     Args:
         path_to_yaml(str): path like input
