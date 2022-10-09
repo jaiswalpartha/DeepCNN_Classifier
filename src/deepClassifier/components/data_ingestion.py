@@ -8,41 +8,51 @@ from tqdm import tqdm
 from pathlib import Path
 
 
-# creating component
 class DataIngestion:
-    def __init__(self,config: DataIngestionConfig):
+    def __init__(self, config: DataIngestionConfig):
         self.config = config
 
     def download_file(self):
-        logger.info("trying to download file")
+        logger.info("Trying to download file...")
         if not os.path.exists(self.config.local_data_file):
-            logger.info("Download Started")
-            filename, header_info = request.urlretrieve(url=self.config.source_url,
-                                                        filename=self.config.local_data_file
-                                                        )
-            logger.info(f"{filename} downloaded with the following info: \n{header_info}")
+            logger.info("Download started...")
+            filename, headers = request.urlretrieve(
+                url=self.config.source_url, filename=self.config.local_data_file
+            )
+            logger.info(f"{filename} download! with following info: \n{headers}")
         else:
-            logger.info(f"File already exists of size of: {get_size(Path(self.config.local_data_file))}")
+            logger.info(
+                f"File already exists of size: {get_size(Path(self.config.local_data_file))}"
+            )
 
-    def _get_updated_list_files(self,list_of_files):
-        return [f for f in list_of_files if f.endswith(".jpg") and ("Cat" in f or "Dog" in f)]
-    
-    def _preprocess(self, zf:ZipFile, f:str, working_dir:str):
-        target_file_path = os.path.join(working_dir, f)
-        if not os.path.exists(target_file_path):
-            zf.extract(f,working_dir)
+    def _get_updated_list_of_files(self, list_of_files):
+        return [
+            f
+            for f in list_of_files
+            if f.endswith(".jpg") and ("Cat" in f or "Dog" in f)
+        ]
 
-        if os.path.getsize(target_file_path)==0:
-            logger.info(f"File removed: {target_file_path} of size : {get_size(Path(target_file_path))}")
-            os.remove(target_file_path)
-            
-            
+    def _preprocess(self, zf: ZipFile, f: str, working_dir: Path):
+        target_filepath = os.path.join(working_dir, f)
+        if not os.path.exists(target_filepath):
+            zf.extract(f, working_dir)
+
+        if os.path.getsize(target_filepath) == 0:
+            logger.info(
+                f"removing file:{target_filepath} of size: {get_size(Path(target_filepath))}"
+            )
+            os.remove(target_filepath)
 
     def unzip_and_clean(self):
-        logger.info(f"Unzipping  file and removing unwanted files ")
+        logger.info("unzipping file and removing unawanted files")
         with ZipFile(file=self.config.local_data_file, mode="r") as zf:
             list_of_files = zf.namelist()
-            updated_list_of_files = self._get_updated_list_files(list_of_files)
-
+            updated_list_of_files = self._get_updated_list_of_files(list_of_files)
             for f in tqdm(updated_list_of_files):
                 self._preprocess(zf, f, self.config.unzip_dir)
+
+    def create_test_data(self):
+        """
+        separte 30% of data into test data
+        """
+        pass

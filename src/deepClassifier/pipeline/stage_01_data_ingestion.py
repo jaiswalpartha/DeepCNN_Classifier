@@ -9,11 +9,12 @@ STAGE_NAME = "Data ingestion Stage"
 def main():
     config = ConfigurationManager()
     data_ingestion_config = config.get_data_ingestion_config()
-    data_ingestion = DataIngestion(config =data_ingestion_config)
+    data_ingestion = DataIngestion(config=data_ingestion_config)
     data_ingestion.download_file()
     data_ingestion.unzip_and_clean()
 
-if __name__== "__main__":
+
+if __name__ == "__main__":
     try:
         logger.info(f">>>>>>>>>Stage {STAGE_NAME} started<<<<<<<<<<<")
         main()
