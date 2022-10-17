@@ -1,1 +1,8 @@
-key: val
+AUGMENTATION: True # if we have less data it will help to create more data by tweking the same data
+IMAGE_SIZE : [224, 224, 3] # as per VGG16 model
+BATCH_SIZE: 16
+INCLUDE_TOP: False
+EPOCHS: 1
+CLASSES: 2
+LEARNING_RATE: 0.01
+WEIGHTS: imagenet
