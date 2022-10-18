@@ -131,3 +131,14 @@ dmypy.json
 .vscode
 *.jpg
 *.zip
+artifacts/prepare_base_model/base_model.h5
+artifacts/prepare_base_model/updated_base_model.h5
+artifacts/prepare_callbacks/checkpoint_dir/model.h5
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-17_23-53-21/train/events.out.tfevents.1666031006.LAPTOP-NOKHV1S4.12736.0.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_15-41-34/train/events.out.tfevents.1666087905.LAPTOP-NOKHV1S4.12088.0.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_15-41-34/validation/events.out.tfevents.1666091080.LAPTOP-NOKHV1S4.12088.1.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_16-51-00/train/events.out.tfevents.1666092062.LAPTOP-NOKHV1S4.12088.2.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_18-25-52/train/events.out.tfevents.1666097754.LAPTOP-NOKHV1S4.12088.3.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_22-34-53/train/events.out.tfevents.1666112698.LAPTOP-NOKHV1S4.15380.0.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_22-34-53/validation/events.out.tfevents.1666115940.LAPTOP-NOKHV1S4.15380.1.v2
+artifacts/training/model.h5
