@@ -18,7 +18,7 @@ class PrepareBaseModelConfig:
     params_include_top: bool
     params_learning_rate: float
     params_classes: int
-    params_weights:str
+    params_weights:str  
 
 @dataclass(frozen=True)
 class PrepareCallbacksConfig:
