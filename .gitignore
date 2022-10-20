@@ -142,3 +142,6 @@ artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_18-25
 artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_22-34-53/train/events.out.tfevents.1666112698.LAPTOP-NOKHV1S4.15380.0.v2
 artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-18_22-34-53/validation/events.out.tfevents.1666115940.LAPTOP-NOKHV1S4.15380.1.v2
 artifacts/training/model.h5
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-20_00-29-16/train/events.out.tfevents.1666205959.LAPTOP-NOKHV1S4.18540.0.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-20_18-31-16/train/events.out.tfevents.1666270882.LAPTOP-NOKHV1S4.15280.0.v2
+artifacts/prepare_callbacks/tensorboard_root_log_dir/tb_logs_at_2022-10-20_18-31-16/validation/events.out.tfevents.1666273763.LAPTOP-NOKHV1S4.15280.1.v2
