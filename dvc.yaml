@@ -36,3 +36,18 @@ stages:
       - EPOCHS
     outs:
       - artifacts/training/model.h5
+  
+  evaluation:
+    cmd: python src/deepClassifier/pipeline/stg_04_evaluation.py
+    deps: 
+      - src/deepClassifier/pipeline/stg_04_evaluation.py
+      - configs/config.yaml
+      - artifacts/data_ingestion/PetImages
+      - artifacts/prepare_base_model
+    params:
+      - IMAGE_SIZE
+      - BATCH_SIZE
+     
+    metrics:
+    - scores.json:
+        cache: false
