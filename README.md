@@ -18,3 +18,6 @@ MLFLOW_TRACKING_URI=https://dagshub.com/jaiswalpartha/DeepCNN_Classifier.mlflow 
 MLFLOW_TRACKING_USERNAME=jaiswalpartha \
 MLFLOW_TRACKING_PASSWORD=49d4169800f7b4260de4d2983f995b0ff329f12d \
 python script.py
+
+# Data ingestion testing using sample data
+https://raw.githubusercontent.com/c17hawke/FSDS_NOV_deepCNNClassifier/main/tests/data/sample_data.zip
